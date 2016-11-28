@@ -22,7 +22,7 @@ class HandVC: UITableViewController {
     
     @IBAction private func addNewCard(_ sender: UIBarButtonItem) {
         if hand.numberOfCards < 5 {
-            hand.addNewCard(at: 0)
+            self.hand = hand.addNewCard(at: 0)
             insertTopRow()
         }
     }
