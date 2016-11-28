@@ -10,7 +10,7 @@ import UIKit
 
 class HandVC: UITableViewController {
 
-    private let hand = Hand()
+    private var hand = Hand()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class HandVC: UITableViewController {
     
     @IBAction private func addNewCard(_ sender: UIBarButtonItem) {
         if hand.numberOfCards < 5 {
-            hand.addNewCard(at: 0)
+            self.hand = hand.addNewCard(at: 0)
             insertTopRow()
         }
     }
@@ -51,7 +51,7 @@ class HandVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
-                hand.deleteCard(at: indexPath.row)
+                self.hand = hand.deleteCard(at: indexPath.row)
                 deleteRow(at: indexPath)
             }
     }
@@ -61,7 +61,7 @@ class HandVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        hand.moveCard(fromAt: sourceIndexPath.row, to: destinationIndexPath.row)
+        self.hand = hand.moveCard(fromAt: sourceIndexPath.row, to: destinationIndexPath.row)
     }
 }
 

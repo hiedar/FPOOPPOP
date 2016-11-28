@@ -8,9 +8,19 @@
 
 import UIKit
 
-class Hand {
-    private let deck = Deck()
-    private var cards = [Card]()
+struct Hand {
+    private var deck: Deck
+    private var cards: [Card]
+    
+    init() {
+        self.deck = Deck()
+        self.cards = [Card]()
+    }
+    
+    init(deck: Deck, cards: [Card]) {
+        self.deck = deck
+        self.cards = cards
+    }
     
     var numberOfCards: Int {
         return cards.count
@@ -20,22 +30,24 @@ class Hand {
         return cards[index]
     }
     
-    func addNewCard(at index: Int) {
-        insertCard(deck.nextCard(), at: index)
+    func addNewCard(at index: Int) -> Hand {
+        return insertCard(deck.nextCard(), at: index)
     }
     
-    private func insertCard(_ card: Card, at index: Int) {
-        cards.insert(card, at: index)
+    private func insertCard(_ card: Card, at index: Int) -> Hand {
+        var mutableCards = cards
+        mutableCards.insert(card, at: index)
+        return Hand(deck: deck, cards: mutableCards)
     }
     
-    func deleteCard(at index: Int) {
-        cards.remove(at: index)
+    func deleteCard(at index: Int) -> Hand {
+        var mutableCards = cards
+        mutableCards.remove(at: index)
+        return Hand(deck: deck, cards: mutableCards)
     }
     
-    func moveCard(fromAt fromIndex: Int, to toIndex: Int) {
-        let cardToMove = cards[fromIndex]
-        deleteCard(at: fromIndex)
-        insertCard(cardToMove, at: toIndex)
+    func moveCard(fromAt fromIndex: Int, to toIndex: Int) -> Hand {
+        return deleteCard(at: fromIndex).insertCard(cards[fromIndex], at: toIndex)
     }
     
 }
