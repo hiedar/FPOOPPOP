@@ -26,7 +26,7 @@ struct Hand {
         return cards.count
     }
     
-    func card(at index: Int) -> Card {
+    subscript(index: Int) -> Card {
         return cards[index]
     }
     

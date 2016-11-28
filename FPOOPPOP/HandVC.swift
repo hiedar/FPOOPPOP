@@ -44,7 +44,7 @@ class HandVC: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as? CardCell else {
             fatalError("Could not create CardCell")
         }
-        cell.fillWith(card: hand.card(at: indexPath.row))
+        cell.fillWith(card: hand[indexPath.row])
         
         return cell
         
