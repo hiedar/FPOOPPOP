@@ -61,7 +61,7 @@ class HandVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        hand.moveCard(fromAt: sourceIndexPath.row, to: destinationIndexPath.row)
+        self.hand = hand.moveCard(fromAt: sourceIndexPath.row, to: destinationIndexPath.row)
     }
 }
 

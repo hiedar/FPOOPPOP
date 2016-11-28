@@ -46,10 +46,8 @@ struct Hand {
         return Hand(deck: deck, cards: mutableCards)
     }
     
-    mutating func moveCard(fromAt fromIndex: Int, to toIndex: Int) {
-        let cardToMove = cards[fromIndex]
-        deleteCard(at: fromIndex)
-        insertCard(cardToMove, at: toIndex)
+    func moveCard(fromAt fromIndex: Int, to toIndex: Int) -> Hand {
+        return deleteCard(at: fromIndex).insertCard(cards[fromIndex], at: toIndex)
     }
     
 }
