@@ -51,7 +51,7 @@ class HandVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
-                hand.deleteCard(at: indexPath.row)
+                self.hand = hand.deleteCard(at: indexPath.row)
                 deleteRow(at: indexPath)
             }
     }
