@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 class Card {
-    let color: UIColor
+//    let color: UIColor
     let rank: Int
     let suit: Suit
     
     init() {
-        self.color = UIColor.black
-        self.rank = 1
+//        self.color = UIColor.black
+        self.rank = (Int(exactly: arc4random_uniform(12)))! + 1
         self.suit = .heart
     }
 }
@@ -37,6 +37,19 @@ enum Suit: CustomStringConvertible {
             return "Heart"
         case .diamond:
             return "Diamond"
+        }
+    }
+    
+    var color: UIColor {
+        switch self {
+        case .spade:
+            return UIColor.black
+        case .club:
+            return UIColor.black
+        case .heart:
+            return UIColor.red
+        case .diamond:
+            return UIColor.red
         }
     }
 }

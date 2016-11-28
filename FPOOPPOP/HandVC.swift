@@ -17,7 +17,7 @@ class HandVC: UITableViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(HandVC.addNewCard(_:)))
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(HandVC.addNewCard(_:)))
+        self.navigationItem.leftBarButtonItem = editButtonItem //UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(HandVC.addNewCard(_:)))
     }
     
     @IBAction private func addNewCard(_ sender: UIBarButtonItem) {
@@ -44,7 +44,7 @@ class HandVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)
         let card = hand.card(at: indexPath.row)
         cell.textLabel?.text = card.rank.description
-        cell.textLabel?.textColor = card.color
+        cell.textLabel?.textColor = card.suit.color
         cell.detailTextLabel?.text = card.suit.description
         return cell
     }
