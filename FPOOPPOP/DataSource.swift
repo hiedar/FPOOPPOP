@@ -12,15 +12,15 @@ class DataSource: NSObject, UITableViewDataSource, SourceType {
     private var hand = Hand()
     
     func addItemTo(tableView: UITableView) {
-        if hand.numberOfCards < 5 {
-            self.hand = hand.addNewCard(at: 0)
+        if hand.numberOfItems < 5 {
+            self.hand = hand.addNewItem(at: 0)
             insertTopRow(in: tableView)
         }
     }
 
     // MARK: - UITableView Datasource Delegate methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hand.numberOfCards
+        return hand.numberOfItems
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -34,13 +34,13 @@ class DataSource: NSObject, UITableViewDataSource, SourceType {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.hand = hand.deleteCard(at: indexPath.row)
+            self.hand = hand.deleteItem(at: indexPath.row)
             deleteRow(in: tableView, at: indexPath)
         }
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        self.hand = hand.moveCard(fromAt: sourceIndexPath.row, to: destinationIndexPath.row)
+        self.hand = hand.moveItem(fromAt: sourceIndexPath.row, to: destinationIndexPath.row)
     }
     
 }

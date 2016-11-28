@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Hand {
+struct Hand: DataType {
     private var deck: Deck
     private var cards: [Card]
     
@@ -22,32 +22,29 @@ struct Hand {
         self.cards = cards
     }
     
-    var numberOfCards: Int {
-        return cards.count
-    }
-    
     subscript(index: Int) -> Card {
         return cards[index]
     }
     
-    func addNewCard(at index: Int) -> Hand {
-        return insertCard(deck.nextCard(), at: index)
+    // MARK: - DataType Implementation
+    var numberOfItems: Int {
+        return cards.count
     }
     
-    private func insertCard(_ card: Card, at index: Int) -> Hand {
+    func addNewItem(at index: Int) -> Hand {
         var mutableCards = cards
-        mutableCards.insert(card, at: index)
+        mutableCards.insert(deck.nextCard(), at: index)
         return Hand(deck: deck, cards: mutableCards)
     }
     
-    func deleteCard(at index: Int) -> Hand {
+    func deleteItem(at index: Int) -> Hand {
         var mutableCards = cards
         mutableCards.remove(at: index)
         return Hand(deck: deck, cards: mutableCards)
     }
     
-    func moveCard(fromAt fromIndex: Int, to toIndex: Int) -> Hand {
-        return deleteCard(at: fromIndex).insertCard(cards[fromIndex], at: toIndex)
+    func moveItem(fromAt: Int, to: Int) -> Hand {
+        return deleteItem(at: fromAt).addNewItem(at: to)
     }
     
 }
