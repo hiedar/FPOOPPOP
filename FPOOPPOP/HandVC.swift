@@ -41,12 +41,13 @@ class HandVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)
-        let card = hand.card(at: indexPath.row)
-        cell.textLabel?.text = card.rank.description
-        cell.textLabel?.textColor = card.suit.color
-        cell.detailTextLabel?.text = card.suit.description
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as? CardCell else {
+            fatalError("Could not create CardCell")
+        }
+        cell.fillWith(card: hand.card(at: indexPath.row))
+        
         return cell
+        
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
