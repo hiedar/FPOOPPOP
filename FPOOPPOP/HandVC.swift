@@ -9,26 +9,19 @@
 import UIKit
 
 class HandVC: UITableViewController {
-
-    private var hand = Hand()
+    private let dataSource = DataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(HandVC.addNewCard(_:)))
+        self.navigationItem.leftBarButtonItem = editButtonItem
         
-        self.navigationItem.leftBarButtonItem = editButtonItem //UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(HandVC.addNewCard(_:)))
+        tableView.dataSource = dataSource
     }
     
     @IBAction private func addNewCard(_ sender: UIBarButtonItem) {
-        if hand.numberOfCards < 5 {
-            self.hand = hand.addNewCard(at: 0)
-            insertTopRow()
-        }
-    }
-    
-    private func insertTopRow() {
-        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+        dataSource.addItemTo(tableView: tableView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,33 +29,5 @@ class HandVC: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hand.numberOfCards
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as? CardCell else {
-            fatalError("Could not create CardCell")
-        }
-        cell.fillWith(card: hand[indexPath.row])
-        
-        return cell
-        
-    }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-            if editingStyle == .delete {
-                self.hand = hand.deleteCard(at: indexPath.row)
-                deleteRow(at: indexPath)
-            }
-    }
-    
-    private func deleteRow(at indexPath: IndexPath) {
-        tableView.deleteRows(at: [indexPath], with: .fade)
-    }
-    
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        self.hand = hand.moveCard(fromAt: sourceIndexPath.row, to: destinationIndexPath.row)
-    }
 }
 

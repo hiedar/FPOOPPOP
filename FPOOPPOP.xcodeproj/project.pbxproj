@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A76777751DEBD85800443F48 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76777741DEBD85800443F48 /* CardCell.swift */; };
+		A76777771DEBE0B700443F48 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76777761DEBE0B700443F48 /* DataSource.swift */; };
 		A7B3E30D1DE836D200AB0075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B3E30C1DE836D200AB0075 /* AppDelegate.swift */; };
 		A7B3E30F1DE836D200AB0075 /* HandVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B3E30E1DE836D200AB0075 /* HandVC.swift */; };
 		A7B3E3121DE836D200AB0075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7B3E3101DE836D200AB0075 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		A76777741DEBD85800443F48 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		A76777761DEBE0B700443F48 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		A7B3E3091DE836D200AB0075 /* FPOOPPOP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FPOOPPOP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B3E30C1DE836D200AB0075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7B3E30E1DE836D200AB0075 /* HandVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandVC.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				A7B3E33C1DE83BA100AB0075 /* Deck.swift */,
 				A7B3E33E1DE83BAD00AB0075 /* Card.swift */,
 				A76777741DEBD85800443F48 /* CardCell.swift */,
+				A76777761DEBE0B700443F48 /* DataSource.swift */,
 			);
 			path = FPOOPPOP;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A76777771DEBE0B700443F48 /* DataSource.swift in Sources */,
 				A7B3E33D1DE83BA100AB0075 /* Deck.swift in Sources */,
 				A7B3E30F1DE836D200AB0075 /* HandVC.swift in Sources */,
 				A76777751DEBD85800443F48 /* CardCell.swift in Sources */,
