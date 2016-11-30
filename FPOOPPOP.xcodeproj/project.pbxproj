@@ -525,6 +525,7 @@
 				A7B3E3331DE836D200AB0075 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7B3E3341DE836D200AB0075 /* Build configuration list for PBXNativeTarget "FPOOPPOPTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +534,7 @@
 				A7B3E3361DE836D200AB0075 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7B3E3371DE836D200AB0075 /* Build configuration list for PBXNativeTarget "FPOOPPOPUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +543,7 @@
 				A7B3E3391DE836D200AB0075 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
