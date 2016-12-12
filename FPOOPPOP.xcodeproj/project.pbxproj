@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A76777751DEBD85800443F48 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76777741DEBD85800443F48 /* CardCell.swift */; };
 		A76777771DEBE0B700443F48 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76777761DEBE0B700443F48 /* DataSource.swift */; };
+		A76777791DEBE69B00443F48 /* SourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76777781DEBE69B00443F48 /* SourceType.swift */; };
+		A767777B1DEBEA3800443F48 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A767777A1DEBEA3800443F48 /* DataType.swift */; };
 		A7B3E30D1DE836D200AB0075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B3E30C1DE836D200AB0075 /* AppDelegate.swift */; };
 		A7B3E30F1DE836D200AB0075 /* HandVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B3E30E1DE836D200AB0075 /* HandVC.swift */; };
 		A7B3E3121DE836D200AB0075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7B3E3101DE836D200AB0075 /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		A76777741DEBD85800443F48 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		A76777761DEBE0B700443F48 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		A76777781DEBE69B00443F48 /* SourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceType.swift; sourceTree = "<group>"; };
+		A767777A1DEBEA3800443F48 /* DataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
 		A7B3E3091DE836D200AB0075 /* FPOOPPOP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FPOOPPOP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B3E30C1DE836D200AB0075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7B3E30E1DE836D200AB0075 /* HandVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandVC.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				A7B3E33E1DE83BAD00AB0075 /* Card.swift */,
 				A76777741DEBD85800443F48 /* CardCell.swift */,
 				A76777761DEBE0B700443F48 /* DataSource.swift */,
+				A76777781DEBE69B00443F48 /* SourceType.swift */,
+				A767777A1DEBEA3800443F48 /* DataType.swift */,
 			);
 			path = FPOOPPOP;
 			sourceTree = "<group>";
@@ -282,6 +288,8 @@
 				A76777751DEBD85800443F48 /* CardCell.swift in Sources */,
 				A7B3E33F1DE83BAD00AB0075 /* Card.swift in Sources */,
 				A7B3E30D1DE836D200AB0075 /* AppDelegate.swift in Sources */,
+				A76777791DEBE69B00443F48 /* SourceType.swift in Sources */,
+				A767777B1DEBEA3800443F48 /* DataType.swift in Sources */,
 				A7B3E33B1DE83B7600AB0075 /* Hand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,25 +8,34 @@
 
 import UIKit
 
-class DataSource: NSObject, UITableViewDataSource {
-    private var hand = Hand()
+class DataSource: NSObject, UITableViewDataSource, SourceType {
+    var dataObject: DataType = Hand()
+    
+    var conditionForAdding: Bool {
+        return dataObject.numberOfItems < 5
+    }
     
     func addItemTo(tableView: UITableView) {
-        if hand.numberOfCards < 5 {
-            self.hand = hand.addNewCard(at: 0)
+        if conditionForAdding {
+            self.dataObject = dataObject.addNewItem(at: 0)
             insertTopRow(in: tableView)
         }
     }
 
     // MARK: - UITableView Datasource Delegate methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hand.numberOfCards
+        return dataObject.numberOfItems
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as? CardCell else {
             fatalError("Could not create CardCell")
         }
+        
+        guard let hand = dataObject as? Hand else {
+            fatalError("Could not create Card Cell or Hand instance")
+        }
+        
         cell.fillWith(card: hand[indexPath.row])
         
         return cell
@@ -34,22 +43,13 @@ class DataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.hand = hand.deleteCard(at: indexPath.row)
+            self.dataObject = dataObject.deleteItem(at: indexPath.row)
             deleteRow(in: tableView, at: indexPath)
         }
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        self.hand = hand.moveCard(fromAt: sourceIndexPath.row, to: destinationIndexPath.row)
+        self.dataObject = dataObject.moveItem(fromAt: sourceIndexPath.row, to: destinationIndexPath.row)
     }
     
-    // MARK: - Private
-    private func insertTopRow(in tableView: UITableView) {
-        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
-    }
-    
-    private func deleteRow(in tableView: UITableView, at indexPath: IndexPath) {
-        tableView.deleteRows(at: [indexPath], with: .fade)
-    }
-
 }
