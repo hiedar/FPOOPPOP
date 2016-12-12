@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70602491DFEAB0D0014D8F6 /* HandDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70602481DFEAB0D0014D8F6 /* HandDataSource.swift */; };
 		A76777751DEBD85800443F48 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76777741DEBD85800443F48 /* CardCell.swift */; };
 		A76777771DEBE0B700443F48 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76777761DEBE0B700443F48 /* DataSource.swift */; };
 		A76777791DEBE69B00443F48 /* SourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76777781DEBE69B00443F48 /* SourceType.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A70602481DFEAB0D0014D8F6 /* HandDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandDataSource.swift; sourceTree = "<group>"; };
 		A76777741DEBD85800443F48 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		A76777761DEBE0B700443F48 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		A76777781DEBE69B00443F48 /* SourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceType.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				A76777761DEBE0B700443F48 /* DataSource.swift */,
 				A76777781DEBE69B00443F48 /* SourceType.swift */,
 				A767777A1DEBEA3800443F48 /* DataType.swift */,
+				A70602481DFEAB0D0014D8F6 /* HandDataSource.swift */,
 			);
 			path = FPOOPPOP;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				A76777791DEBE69B00443F48 /* SourceType.swift in Sources */,
 				A767777B1DEBEA3800443F48 /* DataType.swift in Sources */,
 				A7B3E33B1DE83B7600AB0075 /* Hand.swift in Sources */,
+				A70602491DFEAB0D0014D8F6 /* HandDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
